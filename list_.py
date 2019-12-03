@@ -8,12 +8,23 @@ class Item:
     Node representation
     """
 
-    # pylint: disable=too-few-public-methods
-
     def __init__(self, data):
         self.data = data
         self.next = None
-        self.prev = None
+
+    def get_data(self):
+        """
+        Return present item from linked list.
+        :return: Any
+        """
+        return self.data
+
+    def get_next_item(self):
+        """
+        Return next item from linked list.
+        :return: Any
+        """
+        return self.next
 
 
 class List:
@@ -34,9 +45,7 @@ class List:
             self.head = Item(data)
         else:
             new_node = Item(data)
-            self.head.prev = new_node
             new_node.next = self.head
-            new_node.prev = None
             self.head = new_node
 
     def delete(self):
@@ -46,10 +55,9 @@ class List:
         """
         if self.head is None:
             return None
-        temp = self.head.data
+        node_item = self.head.data
         self.head = self.head.next
-        self.head.prev = None
-        return temp
+        return node_item
 
     def state(self):
         """
@@ -58,9 +66,35 @@ class List:
         """
         res = '['
         if self.head is not None:
-            temp = self.head
-            while temp is not None:
-                res += str(temp.data) + ','
-                temp = temp.next
+            node_item = self.head
+            while node_item is not None:
+                res += str(node_item.data) + ','
+                node_item = node_item.next
             return res.rstrip(',') + ']'
         return '[]'
+
+    def size(self):
+        """
+        Return size of list.
+        :return:
+        """
+        node_item = self.head
+        count = 0
+        while node_item is not None:
+            count = count + 1
+            node_item = node_item.next
+        return count
+
+    def is_empty(self):
+        """
+        Check if the stack is empty.
+        :return:
+        """
+        return self.head is None
+
+    def top(self):
+        """
+        Return top element in the stack.
+        :return:
+        """
+        return self.head.data
