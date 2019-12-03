@@ -64,13 +64,13 @@ class List:
         Return the current state of the linked list.
         :return:
         """
-        res = '['
+        res = ''
         if self.head is not None:
             node_item = self.head
             while node_item is not None:
-                res += str(node_item.data) + ','
+                res += str(node_item.data)
                 node_item = node_item.next
-            return res.rstrip(',') + ']'
+            return '[' + ','.join(res) + ']'
         return '[]'
 
     def size(self):
