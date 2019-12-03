@@ -1,7 +1,7 @@
 """
-Создать класс для представления односвязного списка
-( https://www.geeksforgeeks.org/data-structures/linked-list/ ).
-Реализуйте вставку в голову и удаление из головы.
+Create class for representing singly linked list
+(https://www.geeksforgeeks.org/data-structures/linked-list/).
+Implement insertion to the head and deletion from the head of it.
 """
 
 
