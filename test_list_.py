@@ -3,7 +3,7 @@ import list_
 
 def test_create():
     l = list_.List()
-    assert l.state() == "[]"
+    assert l.state() == []
 
 
 def test_insert():
@@ -11,7 +11,7 @@ def test_insert():
     l.insert(1)
     l.insert(2)
     l.insert(3)
-    assert l.state() == "[3,2,1]"
+    assert l.state() == [3, 2, 1]
 
 
 def test_delete():
@@ -20,4 +20,4 @@ def test_delete():
     l.insert(2)
     l.insert(3)
     assert l.delete() == 3
-    assert l.state() == "[2,1]"
+    assert l.state() == [2, 1]
