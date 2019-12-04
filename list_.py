@@ -38,10 +38,12 @@ class List:
         while temp:
             lst.append(temp.data)
             temp = temp.next
-        return lst
+        return str(lst).replace(' ', '')
 
     def delete(self):
         """Delete the list item"""
+        if self.head is None:
+            return None
         temp = self.head.data
         self.head = self.head.next
         return temp
