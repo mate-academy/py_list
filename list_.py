@@ -44,4 +44,4 @@ class List:
         while current:
             state.append(current.get_value())
             current = current.get_next()
-        return str(state)
+        return '[{0}]'.format(','.join(str(i) for i in state))
