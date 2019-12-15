@@ -66,4 +66,3 @@ class List:
         value = self.head.data
         self.head = self.head.next
         return value
-
